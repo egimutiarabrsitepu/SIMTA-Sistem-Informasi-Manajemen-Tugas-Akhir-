@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jadwal - SIMTA ITB</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body { 
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                <li><a href="profil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                <li><a href="upload.html"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                <li><a href="komentar.html"><span class="glyphicon glyphicon-comment"></span> Komentar</a></li>
+                <li class="active"><a href="jadwal.html"><span class="glyphicon glyphicon-calendar"></span> Jadwal</a></li>
+                <li><a href="riwayat.html"><span class="glyphicon glyphicon-time"></span> Riwayat</a></li>
+                <li><a href="formulir.html"><span class="glyphicon glyphicon-file"></span> Formulir</a></li>
+                <li><a href="notifikasi.html"><span class="glyphicon glyphicon-bell"></span> Notifikasi</a></li>
+                <li><a href="admin.html"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1><b><span class="glyphicon glyphicon-calendar"></span> Jadwal Tugas Akhir</b></h1>
+                <p class="lead">Kelola jadwal bimbingan, seminar, dan kegiatan terkait tugas akhir Anda</p>
+            </div>
+            
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterType">Jenis Kegiatan</label>
+                            <select class="form-control" id="filterType">
+                                <option value="all">Semua Jenis</option>
+                                <option value="bimbingan">Bimbingan</option>
+                                <option value="seminar">Seminar</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="deadline">Batas Waktu</option>
+                                <option value="other">Lainnya</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterStatus">Status</label>
+                            <select class="form-control" id="filterStatus">
+                                <option value="all">Semua Status</option>
+                                <option value="upcoming">Akan Datang</option>
+                                <option value="completed">Selesai</option>
+                                <option value="canceled">Dibatalkan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterMonth">Bulan</label>
+                            <select class="form-control" id="filterMonth">
+                                <option value="all">Semua Bulan</option>
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterYear">Tahun</label>
+                            <select class="form-control" id="filterYear">
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button class="btn btn-primary">Terapkan Filter</button>
+                        <button class="btn btn-default">Reset Filter</button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#addEventModal">
+                            <span class="glyphicon glyphicon-plus"></span> Tambah Jadwal
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Upcoming Events Grid -->
+            <div class="calendar-card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h3><span class="glyphicon glyphicon-bell"></span> Kegiatan Mendatang</h3>
+                    </div>
+                    <a href="#" class="btn btn-default">Lihat Semua Kegiatan</a>
+                </div>
+                
+                <div class="event-grid">
+                    <div class="event-grid-card important">
+                        <div class="event-date">25 Agustus 2025, 09.00-11.00</div>
+                        <h4 class="event-title">Seminar Hasil</h4>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-map-marker"></span> Ruang Seminar CCAR ITB
+                        </div>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-user"></span> Pembimbing & Penguji
+                        </div>
+                        <div class="event-meta">
+                            <span class="status-badge status-pending">Persiapan</span>
+                        </div>
+                        <div class="event-action">
+                            <a href="#" class="btn btn-xs btn-default">Detail</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-grid-card warning">
+                        <div class="event-date">12 Agustus 2025, 13.00-15.00</div>
+                        <h4 class="event-title">Konsultasi Pembimbing</h4>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-map-marker"></span> Labtek V Lt.3
+                        </div>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-user"></span> Roberto Kaban, M. Kom
+                        </div>
+                        <div class="event-meta">
+                            <span class="status-badge status-pending">Belum Dikonfirmasi</span>
+                        </div>
+                        <div class="event-action">
+                            <a href="#" class="btn btn-xs btn-default">Detail</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-grid-card">
+                        <div class="event-date">15 Agustus 2025</div>
+                        <h4 class="event-title">Batas Akhir Pengumpulan Bab 3</h4>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-map-marker"></span> Online
+                        </div>
+                        <div class="event-meta">
+                            <span class="status-badge status-pending">Dalam Proses</span>
+                        </div>
+                        <div class="event-action">
+                            <a href="#" class="btn btn-xs btn-default">Detail</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-grid-card">
+                        <div class="event-date">18 Agustus 2025, 08.00-12.00</div>
+                        <h4 class="event-title">Workshop Penulisan</h4>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-map-marker"></span> Gedung CRCS
+                        </div>
+                        <div class="event-meta">
+                            <span class="status-badge status-approved">Terkonfirmasi</span>
+                        </div>
+                        <div class="event-action">
+                            <a href="#" class="btn btn-xs btn-default">Detail</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-grid-card completed">
+                        <div class="event-date">5 Juli 2025, 10.00-11.30</div>
+                        <h4 class="event-title">Bimbingan Bab 4</h4>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-map-marker"></span> Online
+                        </div>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-user"></span> Dito Putro Utomo, M. Kom
+                        </div>
+                        <div class="event-meta">
+                            <span class="status-badge status-completed">Selesai</span>
+                        </div>
+                        <div class="event-action">
+                            <a href="#" class="btn btn-xs btn-default">Detail</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-grid-card completed">
+                        <div class="event-date">15 Juni 2025, 13.30-15.00</div>
+                        <h4 class="event-title">Seminar Proposal</h4>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-map-marker"></span> R. Seminar CCAR
+                        </div>
+                        <div class="event-meta">
+                            <span class="glyphicon glyphicon-user"></span> Tim Penguji
+                        </div>
+                        <div class="event-meta">
+                            <span class="status-badge status-completed">Selesai</span>
+                        </div>
+                        <div class="event-action">
+                            <a href="#" class="btn btn-xs btn-default">Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Lists -->
+            <div class="calendar-card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h3><span class="glyphicon glyphicon-list"></span> Daftar Jadwal Bimbingan</h3>
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-default">Ekspor ke Excel</a>
+                        <a href="#" class="btn btn-primary">Cetak Jadwal</a>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover" id="scheduleTable">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Tanggal</th>
+                                <th>Waktu</th>
+                                <th>Jenis</th>
+                                <th>Lokasi</th>
+                                <th>Pembimbing</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>12 Agustus 2025</td>
+                                <td>13.00-15.00</td>
+                                <td>Bimbingan</td>
+                                <td>Labtek V Lt.3</td>
+                                <td>Roberto Kaban, M. Kom</td>
+                                <td><span class="status-badge status-pending">Belum Dikonfirmasi</span></td>
+                                <td>
+                                    <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                    <a href="#" class="btn btn-xs btn-primary" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>25 Agustus 2025</td>
+                                <td>09.00-11.00</td>
+                                <td>Seminar Hasil</td>
+                                <td>R. Seminar CCAR</td>
+                                <td>Tim Penguji</td>
+                                <td><span class="status-badge status-approved">Terkonfirmasi</span></td>
+                                <td>
+                                    <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                    <a href="#" class="btn btn-xs btn-primary" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>5 Juli 2025</td>
+                                <td>10.00-11.30</td>
+                                <td>Bimbingan</td>
+                                <td>Online</td>
+                                <td>Dito Putro Utomo, M. Kom</td>
+                                <td><span class="status-badge status-completed">Selesai</span></td>
+                                <td>
+                                    <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                    <a href="#" class="btn btn-xs btn-primary" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>15 Juni 2025</td>
+                                <td>13.30-15.00</td>
+                                <td>Seminar Proposal</td>
+                                <td>R. Seminar CCAR</td>
+                                <td>Tim Penguji</td>
+                                <td><span class="status-badge status-completed">Selesai</span></td>
+                                <td>
+                                    <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                    <a href="#" class="btn btn-xs btn-primary" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>1 Juni 2025</td>
+                                <td>09.00-10.00</td>
+                                <td>Bimbingan</td>
+                                <td>Labtek V Lt.3</td>
+                                <td>Roberto Kaban, M. Kom</td>
+                                <td><span class="status-badge status-completed">Selesai</span></td>
+                                <td>
+                                    <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                    <a href="#" class="btn btn-xs btn-primary" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Event Modal -->
+    <div class="modal fade" id="addEventModal" tabindex="-1" role="dialog" aria-labelledby="addEventModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="addEventModalLabel"><span class="glyphicon glyphicon-plus"></span> Tambah Jadwal Baru</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="eventTitle">Judul Kegiatan</label>
+                            <input type="text" class="form-control" id="eventTitle" placeholder="Contoh: Bimbingan TA, Seminar Proposal, dll">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventType">Jenis Kegiatan</label>
+                            <select class="form-control" id="eventType">
+                                <option value="bimbingan">Bimbingan</option>
+                                <option value="seminar">Seminar</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="deadline">Batas Waktu</option>
+                                <option value="other">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="eventDate">Tanggal</label>
+                                    <input type="date" class="form-control" id="eventDate">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="eventTime">Waktu</label>
+                                    <input type="time" class="form-control" id="eventTime">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventLocation">Lokasi</label>
+                            <input type="text" class="form-control" id="eventLocation" placeholder="Contoh: Labtek V Lt.3, Online, dll">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventSupervisor">Pembimbing/Penguji</label>
+                            <select class="form-control" id="eventSupervisor">
+                                <option value="">-- Pilih --</option>
+                                <option value="pembimbing1">Roberto Kaban, M. Kom</option>
+                                <option value="pembimbing2">Dito Putro Utomo, M. Kom</option>
+                                <option value="penguji1">Devita Permata Sari, M. Kom</option>
+                                <option value="tim_penguji">Tim Penguji</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDescription">Deskripsi (Opsional)</label>
+                            <textarea class="form-control" id="eventDescription" rows="3" placeholder="Tambahkan catatan tentang kegiatan ini"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary">Simpan Jadwal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistem Informasi Manajemen Tugas Akhir - Institut Teknologi dan Bisnis Indonesia</p>
+            <p>Jl. T. Amir Hamzah Km. 31,5 Tandem Hilir, Kec. Hamparan Perak - Kab. Deli Serdang</p>
+            <p>Design With <span class="glyphicon glyphicon-heart"></span> By Egi Mutiara Br Sitepu</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/moment.min.js"></script>
+    <script src="bootstrap/js/dataTables.bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.dataTables.js"></script>
+    <script src="bootstrap/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profil - SIMTA Institut Teknologi dan Bisnis Indonesia</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body { 
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                <li class="active"><a href="profil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                <li><a href="upload.html"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                <li><a href="komentar.html"><span class="glyphicon glyphicon-comment"></span> Komentar</a></li>
+                <li><a href="jadwal.html"><span class="glyphicon glyphicon-calendar"></span> Jadwal</a></li>
+                <li><a href="riwayat.html"><span class="glyphicon glyphicon-time"></span> Riwayat</a></li>
+                <li><a href="formulir.html"><span class="glyphicon glyphicon-file"></span> Formulir</a></li>
+                <li><a href="notifikasi.html"><span class="glyphicon glyphicon-bell"></span> Notifikasi</a></li>
+                <li><a href="admin.html"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1><b><span class="glyphicon glyphicon-user"></span> Profil Mahasiswa</b></h1>
+                <p class="lead">Informasi pribadi dan akademik Anda di Sistem Informasi Manajemen Tugas Akhir Institut Teknologi dan Bisnis Indonesia</p>
+            </div>
+            
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="row">
+                    <div class="col-md-2 text-center">
+                        <img src="images/profil.jpg" alt="Foto Profil" class="profile-pic">
+                         <button class="btn btn-default btn-sm mt-2">Ubah Foto</button>
+                        
+                    </div>
+                    <div class="col-md-10 profile-details">
+                        <h2>Egi Mutiara Br Sitepu</h2>
+                        <p class="lead">Mahasiswa Program Sarjana - Rekayasa Perangkat Lunak</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p><strong>NIM:</strong> 23090014</p>
+                                <p><strong>Angkatan:</strong> 2022</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Email:</strong> 23090014@egimutiara.simta.ac.id</p>
+                                <p><strong>Telepon:</strong> 085765635455</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Status:</strong> Aktif</p>
+                                <p><strong>Semester:</strong> 8 (Delapan)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Personal Information -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <h4><span class="glyphicon glyphicon-info-sign"></span> Informasi Pribadi</h4>
+                        <table class="table">
+                            <tr>
+                                <th width="40%">Tempat, Tanggal Lahir</th>
+                                <td>Medan, 12 Agustus 2005</td>
+                            </tr>
+                            <tr>
+                                <th>Jenis Kelamin</th>
+                                <td>Perempuan</td>
+                            </tr>
+                            <tr>
+                                <th>Agama</th>
+                                <td>Islam</td>
+                            </tr>
+                            <tr>
+                                <th>Alamat</th>
+                                <td>Jl. Simpang 3 Lau Njahong, Namu Ukur Selatan 20771</td>
+                            </tr>
+                            <tr>
+                                <th>Alamat Orang Tua</th>
+                                <td>Jl. Simpang 3 Lau Njahong, Namu Ukur Selatan 20771</td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-primary">Edit Informasi Pribadi</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <h4><span class="glyphicon glyphicon-education"></span> Informasi Akademik</h4>
+                        <table class="table">
+                            <tr>
+                                <th width="40%">Program Studi</th>
+                                <td>Rekayasa Perangkat Lunak</td>
+                            </tr>
+                            <tr>
+                                <th>Fakultas</th>
+                                <td>Saintek</td>
+                            </tr>
+                            <tr>
+                                <th>Pembimbing 1</th>
+                                <td>Roberto Kaban, M. Kom.</td>
+                            </tr>
+                            <tr>
+                                <th>Pembimbing 2</th>
+                                <td>Dito Putro Utomo, M. Kom.</td>
+                            </tr>
+                            <tr>
+                                <th>IPK Terakhir</th>
+                                <td>3.93 (Sangat Memuaskan)</td>
+                            </tr>
+                        </table>
+                        <button class="btn btn-primary">Edit Informasi Akademik</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tugas Akhir Information -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-card">
+                        <h4><span class="glyphicon glyphicon-book"></span> Informasi Tugas Akhir</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <tr>
+                                        <th width="40%">Judul Tugas Akhir</th>
+                                        <td>Pengembangan Sistem Deteksi Plagiarisme untuk Dokumen Akademik Berbasis Machine Learning</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tanggal Pengajuan</th>
+                                        <td>1 Juni 2025</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tanggal Disetujui</th>
+                                        <td>5 Juni 2025</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Status</th>
+                                        <td><span class="label label-primary">Dalam Pengerjaan</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <tr>
+                                        <th width="40%">Bidang Ilmu</th>
+                                        <td>Kecerdasan Buatan</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Metode Penelitian</th>
+                                        <td>Eksperimental</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Target Selesai</th>
+                                        <td>15 September 2025</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Progress</th>
+                                        <td>
+                                            <div class="progress" style="height: 15px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 65%"></div>
+                                            </div>
+                                            65% Selesai
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Abstrak:</h5>
+                                <p>Penelitian ini bertujuan untuk mengembangkan sistem deteksi plagiarisme khusus untuk dokumen akademik dengan memanfaatkan teknik machine learning. Sistem yang dikembangkan akan mampu mendeteksi kemiripan konten baik dalam bentuk teks langsung maupun parafrase dengan mempertimbangkan konteks akademik. Metode yang digunakan meliputi preprocessing dokumen, ekstraksi fitur menggunakan word embedding, dan klasifikasi kemiripan dengan algoritma deep learning. Hasil pengujian menunjukkan bahwa sistem ini mampu mencapai akurasi 92% dalam mendeteksi plagiarisme pada dataset uji yang terdiri dari 1000 dokumen akademik.</p>
+                                <button class="btn btn-primary">Edit Informasi Tugas Akhir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Academic History -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-card">
+                        <h4><span class="glyphicon glyphicon-list-alt"></span> Riwayat Akademik</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Semester</th>
+                                    <th>IP</th>
+                                    <th>SKS</th>
+                                    <th>Status</th>
+                                    <th>Catatan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1 (2022/2023 Ganjil)</td>
+                                    <td>3.50</td>
+                                    <td>20</td>
+                                    <td><span class="label label-success">Lulus</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>2 (2022/2023 Genap)</td>
+                                    <td>3.65</td>
+                                    <td>22</td>
+                                    <td><span class="label label-success">Lulus</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>3 (2023/2024 Ganjil)</td>
+                                    <td>3.70</td>
+                                    <td>21</td>
+                                    <td><span class="label label-success">Lulus</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>4 (2023/2024 Genap)</td>
+                                    <td>3.80</td>
+                                    <td>20</td>
+                                    <td><span class="label label-success">Lulus</span></td>
+                                    <td>Mendapatkan penghargaan dean list</td>
+                                </tr>
+                                <tr>
+                                    <td>5 (2024/2025 Ganjil)</td>
+                                    <td>3.75</td>
+                                    <td>18</td>
+                                    <td><span class="label label-success">Lulus</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>6 (2024/2025 Genap)</td>
+                                    <td>3.85</td>
+                                    <td>16</td>
+                                    <td><span class="label label-success">Lulus</span></td>
+                                    <td>Mengambil mata kuliah tugas akhir 1</td>
+                                </tr>
+                                <tr>
+                                    <td>7 (2025/2026 Ganjil)</td>
+                                    <td>3.90</td>
+                                    <td>14</td>
+                                    <td><span class="label label-primary">Berjalan</span></td>
+                                    <td>Mengambil mata kuliah tugas akhir 2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-default">Lihat Transkrip Lengkap</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bimbingan History -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-card">
+                        <h4><span class="glyphicon glyphicon-time"></span> Riwayat Bimbingan</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Pertemuan Ke-</th>
+                                    <th>Tanggal</th>
+                                    <th>Pembimbing</th>
+                                    <th>Durasi</th>
+                                    <th>Materi</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>5 Juni 2025</td>
+                                    <td>Roberto Kaban, M. Kom</td>
+                                    <td>60 menit</td>
+                                    <td>Pengajuan Judul</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>12 Juni 2025</td>
+                                    <td>Dito Putro Utomo, M. Kom</td>
+                                    <td>45 menit</td>
+                                    <td>Penyusunan Proposal</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>20 Juni 2025</td>
+                                    <td>Roberto Kaban, M. Kom</td>
+                                    <td>30 menit</td>
+                                    <td>Revisi Proposal</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>28 Juni 2025</td>
+                                    <td>Dito Putro Utomo, M. Kom</td>
+                                    <td>50 menit</td>
+                                    <td>Persiapan Seminar</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5 Juli 2025</td>
+                                    <td>Roberto Kaban, M. Kom</td>
+                                    <td>40 menit</td>
+                                    <td>Bab 1 Pendahuluan</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>15 Juli 2025</td>
+                                    <td>Dito Putro Utomo, M. Kom</td>
+                                    <td>55 menit</td>
+                                    <td>Bab 2 Tinjauan Pustaka</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>25 Juli 2025</td>
+                                    <td>Roberto Kaban, M. Kom</td>
+                                    <td>45 menit</td>
+                                    <td>Revisi Bab 2</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>5 Agustus 2025</td>
+                                    <td>Dito Putro Utomo, M. Kom</td>
+                                    <td>60 menit</td>
+                                    <td>Bab 3 Metodologi</td>
+                                    <td><span class="label label-primary">Berjalan</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-default">Lihat Riwayat Lengkap</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Account Settings -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-card">
+                        <h4><span class="glyphicon glyphicon-cog"></span> Pengaturan Akun</h4>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-10">
+                                    <p class="form-control-static">23090014@egimutiara.simta.ac.id</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password saat ini">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputNewPassword" class="col-sm-2 control-label">Password Baru</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputNewPassword" placeholder="Password baru">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputConfirmPassword" class="col-sm-2 control-label">Konfirmasi Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Konfirmasi password baru">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Perbarui Password</button>
+                                    <button type="button" class="btn btn-link">Lupa Password?</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistem Informasi Manajemen Tugas Akhir - Institut Teknologi dan Bisnis Indonesia</p>
+            <p>Jl. T. Amir Hamzah Km. 31,5 Tandem Hilir, Kec. Hamparan Perak - Kab. Deli Serdang</p>
+            <p>Design With <span class="glyphicon glyphicon-heart"></span> By Egi Mutiara Br Sitepu</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/dataTables.bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.dataTables.js"></script>
+    <script src="bootstrap/js/scripts.js"></script>
+</body>
+</html>

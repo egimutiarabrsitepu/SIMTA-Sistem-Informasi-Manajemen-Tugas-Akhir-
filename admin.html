@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin - SIMTA ITB</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body { 
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                <li><a href="profil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                <li><a href="upload.html"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                <li><a href="komentar.html"><span class="glyphicon glyphicon-comment"></span> Komentar</a></li>
+                <li><a href="jadwal.html"><span class="glyphicon glyphicon-calendar"></span> Jadwal</a></li>
+                <li><a href="riwayat.html"><span class="glyphicon glyphicon-time"></span> Riwayat</a></li>
+                <li><a href="formulir.html"><span class="glyphicon glyphicon-file"></span> Formulir</a></li>
+                <li><a href="notifikasi.html"><span class="glyphicon glyphicon-bell"></span> Notifikasi <span class="notification-badge">5</span></a></li>
+                <li class="active"><a href="admin.html"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1><b><span class="glyphicon glyphicon-cog"></span> Admin Dashboard</b></h1>
+                <p class="lead">Kelola sistem dan pengguna SIMTA ITB</p>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-number">1,245</div>
+                        <div class="stat-label">Total Mahasiswa</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-number">243</div>
+                        <div class="stat-label">Dosen Pembimbing</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-number">78</div>
+                        <div class="stat-label">Tugas Aktif</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Seminar Hari Ini</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Admin Panels -->
+            <div class="row admin-panel">
+                <div class="col-md-4">
+                    <div class="admin-card">
+                        <div class="admin-card-icon">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </div>
+                        <h3>Manajemen Pengguna</h3>
+                        <p>Kelola akun mahasiswa, dosen, dan administrator sistem</p>
+                        <a href="#users" class="btn btn-primary">Kelola</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="admin-card">
+                        <div class="admin-card-icon">
+                            <span class="glyphicon glyphicon-file"></span>
+                        </div>
+                        <h3>Manajemen Dokumen</h3>
+                        <p>Kelola template dokumen, persyaratan, dan arsip tugas akhir</p>
+                        <a href="#documents" class="btn btn-primary">Kelola</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="admin-card">
+                        <div class="admin-card-icon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </div>
+                        <h3>Manajemen Jadwal</h3>
+                        <p>Atur jadwal seminar, sidang, dan kegiatan akademik lainnya</p>
+                        <a href="#schedules" class="btn btn-primary">Kelola</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row admin-panel">
+                <div class="col-md-4">
+                    <div class="admin-card">
+                        <div class="admin-card-icon">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </div>
+                        <h3>Notifikasi Sistem</h3>
+                        <p>Kelola template notifikasi dan pengiriman pesan sistem</p>
+                        <a href="#notifications" class="btn btn-primary">Kelola</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="admin-card">
+                        <div class="admin-card-icon">
+                            <span class="glyphicon glyphicon-stats"></span>
+                        </div>
+                        <h3>Laporan & Analitik</h3>
+                        <p>Generate laporan dan analisis data tugas akhir</p>
+                        <a href="#reports" class="btn btn-primary">Kelola</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="admin-card">
+                        <div class="admin-card-icon">
+                            <span class="glyphicon glyphicon-wrench"></span>
+                        </div>
+                        <h3>Pengaturan Sistem</h3>
+                        <p>Konfigurasi sistem, periode akademik, dan parameter</p>
+                        <a href="#settings" class="btn btn-primary">Kelola</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tabs for Detailed Management -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Pengguna</a></li>
+                <li role="presentation"><a href="#documents" aria-controls="documents" role="tab" data-toggle="tab">Dokumen</a></li>
+                <li role="presentation"><a href="#activities" aria-controls="activities" role="tab" data-toggle="tab">Aktivitas</a></li>
+                <li role="presentation"><a href="#system" aria-controls="system" role="tab" data-toggle="tab">Sistem</a></li>
+            </ul>
+            
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="users">
+                    <div class="admin-section">
+                        <h3 class="admin-section-title">Manajemen Pengguna</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Cari pengguna...">
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <button class="btn btn-success">
+                                    <span class="glyphicon glyphicon-plus"></span> Tambah Pengguna
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered user-management-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nama</th>
+                                        <th>Role</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>MHS2025001</td>
+                                        <td>Marselino Ferdinan</td>
+                                        <td>Mahasiswa</td>
+                                        <td>marselino.ferdinan@students.itb.ac.id</td>
+                                        <td><span class="label label-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-primary">Edit</button>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DSN2025001</td>
+                                        <td>Roberto Kaban, M. Kom.</td>
+                                        <td>Dosen</td>
+                                        <td>roberto.kaban@itb.ac.id</td>
+                                        <td><span class="label label-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-primary">Edit</button>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>ADM2025001</td>
+                                        <td>Admin Sistem</td>
+                                        <td>Administrator</td>
+                                        <td>admin@simta.itb.ac.id</td>
+                                        <td><span class="label label-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-primary">Edit</button>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>MHS2025002</td>
+                                        <td>Maudy Ayunda</td>
+                                        <td>Mahasiswa</td>
+                                        <td>maudy.ayunda@students.itb.ac.id</td>
+                                        <td><span class="label label-warning">Non-aktif</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-primary">Edit</button>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DSN2025002</td>
+                                        <td>Dito Putro Utomo, M. Kom.</td>
+                                        <td>Dosen</td>
+                                        <td>ditoputro.utomo@itb.ac.id</td>
+                                        <td><span class="label label-success">Aktif</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-primary">Edit</button>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <nav aria-label="Page navigation" class="text-center">
+                            <ul class="pagination">
+                                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                
+                <div role="tabpanel" class="tab-pane" id="documents">
+                    <div class="admin-section">
+                        <h3 class="admin-section-title">Manajemen Dokumen</h3>
+                        <p>Kelola template dokumen, persyaratan, dan arsip tugas akhir.</p>
+                        <!-- Content for documents management would go here -->
+                    </div>
+                </div>
+                
+                <div role="tabpanel" class="tab-pane" id="activities">
+                    <div class="admin-section">
+                        <h3 class="admin-section-title">Aktivitas Sistem Terkini</h3>
+                        
+                        <ul class="recent-activity">
+                            <li>
+                                <strong>Admin Sistem</strong> mengupdate pengaturan notifikasi
+                                <div class="activity-time">5 menit yang lalu</div>
+                            </li>
+                            <li>
+                                <strong>Prof. Dr. Budi Santoso, M.Sc.</strong> memberikan komentar pada tugas akhir Andi Wijaya
+                                <div class="activity-time">1 jam yang lalu</div>
+                            </li>
+                            <li>
+                                <strong>Andi Wijaya</strong> mengunggah revisi bab 3
+                                <div class="activity-time">3 jam yang lalu</div>
+                            </li>
+                            <li>
+                                Sistem melakukan backup otomatis
+                                <div class="activity-time">Kemarin, 23:45</div>
+                            </li>
+                            <li>
+                                <strong>Citra Dewi</strong> mengajukan jadwal seminar proposal
+                                <div class="activity-time">Kemarin, 15:30</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div role="tabpanel" class="tab-pane" id="system">
+                    <div class="admin-section">
+                        <h3 class="admin-section-title">Pengaturan Sistem</h3>
+                        
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nama Sistem</label>
+                                        <input type="text" class="form-control" value="SIMTA ITB">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Periode Akademik Saat Ini</label>
+                                        <select class="form-control">
+                                            <option>2024/2025 Genap</option>
+                                            <option>2024/2025 Ganjil</option>
+                                            <option>2023/2024 Genap</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Waktu Kadaluarsa Persetujuan (hari)</label>
+                                        <input type="number" class="form-control" value="7">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email Sistem</label>
+                                        <input type="email" class="form-control" value="simta@itb.ac.id">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Waktu Backup Harian</label>
+                                        <input type="time" class="form-control" value="23:00">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" checked> Aktifkan notifikasi email
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Mode pemeliharaan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistem Informasi Manajemen Tugas Akhir - Institut Teknologi dan Bisnis Indonesia</p>
+            <p>Jl. T. Amir Hamzah Km. 31,5 Tandem Hilir, Kec. Hamparan Perak - Kab. Deli Serdang</p>
+            <p>Design With <span class="glyphicon glyphicon-heart"></span> By Egi Mutiara Br Sitepu</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/dataTables.bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.dataTables.js"></script>
+</body>
+</html>

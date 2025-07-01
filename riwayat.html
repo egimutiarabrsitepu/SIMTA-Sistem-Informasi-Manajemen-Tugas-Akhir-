@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Riwayat - SIMTA ITB</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body { 
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                <li><a href="profil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                <li><a href="upload.html"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                <li><a href="komentar.html"><span class="glyphicon glyphicon-comment"></span> Komentar</a></li>
+                <li><a href="jadwal.html"><span class="glyphicon glyphicon-calendar"></span> Jadwal</a></li>
+                <li class="active"><a href="riwayat.html"><span class="glyphicon glyphicon-time"></span> Riwayat</a></li>
+                <li><a href="formulir.html"><span class="glyphicon glyphicon-file"></span> Formulir</a></li>
+                <li><a href="notifikasi.html"><span class="glyphicon glyphicon-bell"></span> Notifikasi</a></li>
+                <li><a href="admin.html"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1><b><span class="glyphicon glyphicon-time"></span> Riwayat Tugas Akhir</b></h1>
+                <p class="lead">Lihat perkembangan dan riwayat penyelesaian tugas akhir Anda</p>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="history-card">
+                <h3><span class="glyphicon glyphicon-stats"></span> Progres Penyelesaian</h3>
+                
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                        75% Selesai
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body text-center">
+                                <h4>Proposal</h4>
+                                <div class="progress" style="height: 10px; margin: 10px 0;">
+                                    <div class="progress-bar progress-bar-success" style="width: 100%"></div>
+                                </div>
+                                <p><span class="status-badge status-completed">Disetujui</span></p>
+                                <p>12 Mei 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body text-center">
+                                <h4>Bab 1-3</h4>
+                                <div class="progress" style="height: 10px; margin: 10px 0;">
+                                    <div class="progress-bar progress-bar-success" style="width: 100%"></div>
+                                </div>
+                                <p><span class="status-badge status-completed">Disetujui</span></p>
+                                <p>15 Juni 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body text-center">
+                                <h4>Bab 4-5</h4>
+                                <div class="progress" style="height: 10px; margin: 10px 0;">
+                                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                </div>
+                                <p><span class="status-badge status-pending">Dalam Review</span></p>
+                                <p>12 Agustus 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body text-center">
+                                <h4>Final</h4>
+                                <div class="progress" style="height: 10px; margin: 10px 0;">
+                                    <div class="progress-bar" style="width: 0%"></div>
+                                </div>
+                                <p><span class="status-badge status-pending">Belum Dimulai</span></p>
+                                <p>-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterType">Jenis Kegiatan</label>
+                            <select class="form-control" id="filterType">
+                                <option value="all">Semua Jenis</option>
+                                <option value="bimbingan">Bimbingan</option>
+                                <option value="seminar">Seminar</option>
+                                <option value="revisi">Revisi</option>
+                                <option value="pengumpulan">Pengumpulan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterStatus">Status</label>
+                            <select class="form-control" id="filterStatus">
+                                <option value="all">Semua Status</option>
+                                <option value="completed">Selesai</option>
+                                <option value="rejected">Ditolak</option>
+                                <option value="revised">Direvisi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterMonth">Bulan</label>
+                            <select class="form-control" id="filterMonth">
+                                <option value="all">Semua Bulan</option>
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterYear">Tahun</label>
+                            <select class="form-control" id="filterYear">
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Terapkan Filter</button>
+                <button class="btn btn-default">Reset Filter</button>
+                <button class="btn btn-info pull-right">
+                    <span class="glyphicon glyphicon-print"></span> Cetak Riwayat
+                </button>
+            </div>
+            
+            <!-- Timeline and Milestones -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="history-card">
+                        <h3><span class="glyphicon glyphicon-list-alt"></span> Timeline Penyelesaian</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"><span class="glyphicon glyphicon-ok"></span></div>
+                                <div class="timeline-content">
+                                    <h4>Pengajuan Proposal Disetujui</h4>
+                                    <p><span class="glyphicon glyphicon-time"></span> 12 Mei 2025</p>
+                                    <p>Proposal tugas akhir Anda telah disetujui oleh pembimbing dan koordinator TA.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"><span class="glyphicon glyphicon-ok"></span></div>
+                                <div class="timeline-content">
+                                    <h4>Seminar Proposal</h4>
+                                    <p><span class="glyphicon glyphicon-time"></span> 15 Juni 2025</p>
+                                    <p>Anda telah menyelesaikan seminar proposal dengan nilai B+.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"><span class="glyphicon glyphicon-ok"></span></div>
+                                <div class="timeline-content">
+                                    <h4>Pengumpulan Bab 1-3</h4>
+                                    <p><span class="glyphicon glyphicon-time"></span> 30 Juni 2025</p>
+                                    <p>Draft bab 1-3 telah dikumpulkan dan disetujui oleh pembimbing.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"><span class="glyphicon glyphicon-refresh"></span></div>
+                                <div class="timeline-content">
+                                    <h4>Pengumpulan Bab 4-5</h4>
+                                    <p><span class="glyphicon glyphicon-time"></span> 12 Agustus 2025</p>
+                                    <p>Draft bab 4-5 telah dikumpulkan dan sedang dalam proses review.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"><span class="glyphicon glyphicon-time"></span></div>
+                                <div class="timeline-content">
+                                    <h4>Seminar Hasil</h4>
+                                    <p><span class="glyphicon glyphicon-time"></span> 25 Agustus 2025</p>
+                                    <p>Jadwal seminar hasil telah ditentukan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="history-card">
+                        <h3><span class="glyphicon glyphicon-flag"></span> Pencapaian Penting</h3>
+                        
+                        <div class="milestone-card completed">
+                            <h4>Proposal Disetujui</h4>
+                            <p><span class="glyphicon glyphicon-time"></span> 12 Mei 2025</p>
+                            <p>Proposal tugas akhir Anda telah disetujui oleh pembimbing dan koordinator TA.</p>
+                            <p><span class="status-badge status-completed">Selesai</span></p>
+                        </div>
+                        
+                        <div class="milestone-card completed">
+                            <h4>Seminar Proposal</h4>
+                            <p><span class="glyphicon glyphicon-time"></span> 15 Juni 2025</p>
+                            <p>Anda telah menyelesaikan seminar proposal dengan nilai B+.</p>
+                            <p><span class="status-badge status-completed">Nilai: B+</span></p>
+                        </div>
+                        
+                        <div class="milestone-card warning">
+                            <h4>Revisi Bab 3</h4>
+                            <p><span class="glyphicon glyphicon-time"></span> 25 Juni 2025</p>
+                            <p>Anda diminta untuk melakukan revisi pada metodologi penelitian.</p>
+                            <p><span class="status-badge status-pending">Direvisi</span></p>
+                        </div>
+                        
+                        <div class="milestone-card">
+                            <h4>Pengumpulan Bab 4-5</h4>
+                            <p><span class="glyphicon glyphicon-time"></span> 12 Agustus 2025</p>
+                            <p>Draft bab 4-5 telah dikumpulkan dan sedang dalam proses review.</p>
+                            <p><span class="status-badge status-pending">Dalam Review</span></p>
+                        </div>
+                        
+                        <a href="#" class="btn btn-default btn-block">Lihat Semua Pencapaian</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- History Table -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="history-card">
+                        <h3><span class="glyphicon glyphicon-list"></span> Riwayat Kegiatan</h3>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="historyTable">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Tanggal</th>
+                                        <th>Jenis Kegiatan</th>
+                                        <th>Deskripsi</th>
+                                        <th>Status</th>
+                                        <th>Komentar</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>12 Mei 2025</td>
+                                        <td>Pengajuan Proposal</td>
+                                        <td>Proposal tugas akhir diajukan</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>Proposal sudah memenuhi syarat</td>
+                                        <td>
+                                            <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>15 Juni 2025</td>
+                                        <td>Seminar Proposal</td>
+                                        <td>Presentasi proposal tugas akhir</td>
+                                        <td><span class="status-badge status-completed">Selesai</span></td>
+                                        <td>Nilai: B+</td>
+                                        <td>
+                                            <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>20 Juni 2025</td>
+                                        <td>Pengumpulan Bab 1-3</td>
+                                        <td>Draft bab 1-3 dikumpulkan</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>Bab 3 perlu perbaikan metodologi</td>
+                                        <td>
+                                            <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>25 Juni 2025</td>
+                                        <td>Revisi Bab 3</td>
+                                        <td>Revisi metodologi penelitian</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>Revisi sudah sesuai</td>
+                                        <td>
+                                            <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>12 Agustus 2025</td>
+                                        <td>Pengumpulan Bab 4-5</td>
+                                        <td>Draft bab 4-5 dikumpulkan</td>
+                                        <td><span class="status-badge status-pending">Dalam Review</span></td>
+                                        <td>Sedang diproses</td>
+                                        <td>
+                                            <a href="#" class="btn btn-xs btn-default" title="Detail"><span class="glyphicon glyphicon-search"></span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistem Informasi Manajemen Tugas Akhir - Institut Teknologi dan Bisnis Indonesia</p>
+            <p>Jl. T. Amir Hamzah Km. 31,5 Tandem Hilir, Kec. Hamparan Perak - Kab. Deli Serdang</p>
+            <p>Design With <span class="glyphicon glyphicon-heart"></span> By Egi Mutiara Br Sitepu</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/dataTables.bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.dataTables.js"></script>
+</body>
+</html>

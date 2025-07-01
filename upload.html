@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upload - SIMTA ITB</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body { 
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                <li><a href="profil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                <li class="active"><a href="upload.html"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                <li><a href="komentar.html"><span class="glyphicon glyphicon-comment"></span> Komentar</a></li>
+                <li><a href="jadwal.html"><span class="glyphicon glyphicon-calendar"></span> Jadwal</a></li>
+                <li><a href="riwayat.html"><span class="glyphicon glyphicon-time"></span> Riwayat</a></li>
+                <li><a href="formulir.html"><span class="glyphicon glyphicon-file"></span> Formulir</a></li>
+                <li><a href="notifikasi.html"><span class="glyphicon glyphicon-bell"></span> Notifikasi</a></li>
+                <li><a href="admin.html"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1><b><span class="glyphicon glyphicon-upload"></span> Upload Dokumen Tugas Akhir</b></h1>
+                <p class="lead">Unggah dokumen tugas akhir Anda sesuai dengan tahapan dan persyaratan yang berlaku</p>
+            </div>
+            
+            <!-- Upload Progress -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upload-card">
+                        <h3>Progress Upload Dokumen</h3>
+                        <div class="progress" style="height: 25px; margin-bottom: 20px;">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% Dokumen Terunggah</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="well text-center">
+                                    <h4>Dokumen Wajib</h4>
+                                    <h2>8</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="well text-center">
+                                    <h4>Telah Diunggah</h4>
+                                    <h2>6</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="well text-center">
+                                    <h4>Disetujui</h4>
+                                    <h2>5</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="well text-center">
+                                    <h4>Perlu Revisi</h4>
+                                    <h2>1</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Upload Section -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="upload-card">
+                        <h3><span class="glyphicon glyphicon-cloud-upload"></span> Unggah Dokumen Baru</h3>
+                        
+                        <form id="uploadForm">
+                            <div class="form-group">
+                                <label for="documentType">Jenis Dokumen</label>
+                                <select class="form-control" id="documentType" required>
+                                    <option value="">-- Pilih Jenis Dokumen --</option>
+                                    <option value="proposal">Proposal Tugas Akhir</option>
+                                    <option value="bab1">Bab 1 - Pendahuluan</option>
+                                    <option value="bab2">Bab 2 - Tinjauan Pustaka</option>
+                                    <option value="bab3">Bab 3 - Metodologi</option>
+                                    <option value="bab4">Bab 4 - Hasil & Pembahasan</option>
+                                    <option value="bab5">Bab 5 - Kesimpulan</option>
+                                    <option value="laporan">Laporan Lengkap</option>
+                                    <option value="presentasi">Slide Presentasi</option>
+                                    <option value="lainnya">Dokumen Lainnya</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="documentVersion">Versi Dokumen</label>
+                                <input type="text" class="form-control" id="documentVersion" placeholder="Contoh: v1.0, v2.1, dll" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="documentDescription">Deskripsi (Opsional)</label>
+                                <textarea class="form-control" id="documentDescription" rows="3" placeholder="Tambahkan catatan atau deskripsi tentang dokumen ini"></textarea>
+                            </div>
+                            
+                            <div class="upload-area" id="dropZone">
+                                <i class="glyphicon glyphicon-cloud-upload"></i>
+                                <h4>Seret file ke sini atau klik untuk memilih</h4>
+                                <p class="text-muted">Format yang didukung: PDF, DOCX, PPTX (Maks. 10MB)</p>
+                                <input type="file" id="fileInput" style="display: none;" accept=".pdf,.docx,.pptx">
+                                <div id="fileName" class="hidden"></div>
+                            </div>
+                            
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" required> Saya menyatakan bahwa dokumen ini adalah karya saya sendiri dan telah memenuhi semua persyaratan
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                <span class="glyphicon glyphicon-upload"></span> Upload Dokumen
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="upload-card">
+                        <h3><span class="glyphicon glyphicon-list-alt"></span> Persyaratan Dokumen</h3>
+                        
+                        <div class="form-section">
+                            <h4>Format Dokumen</h4>
+                            <ul class="requirements-list">
+                                <li>Format file: PDF (untuk dokumen tertulis), PPTX (untuk presentasi)</li>
+                                <li>Maksimal ukuran file: 10MB</li>
+                                <li>Nama file harus mengikuti format: <code>JenisDokumen_NIM_Nama_versi</code></li>
+                                <li>Contoh: <code>Proposal_23090014_EgiMutiaraBrSitepu_v2.1.pdf</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h4>Struktur Dokumen</h4>
+                            <ul class="requirements-list">
+                                <li>Menggunakan template resmi ITB</li>
+                                <li>Nomor halaman di bagian bawah tengah</li>
+                                <li>Font Times New Roman 12pt atau Arial 11pt</li>
+                                <li>Spasi 1.5 untuk teks utama</li>
+                                <li>Margin minimal 3cm (kiri), 2.5cm (kanan, atas, bawah)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h4>Ketentuan Lain</h4>
+                            <ul class="requirements-list">
+                                <li>Dokumen harus sudah disetujui oleh pembimbing sebelum diunggah</li>
+                                <li>Setiap dokumen wajib mencantumkan halaman judul yang ditandatangani</li>
+                                <li>Dokumen yang diunggah tidak dapat diubah setelah disetujui admin</li>
+                                <li>Revisi dokumen harus menggunakan nomor versi yang diperbarui</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="alert alert-info">
+                            <strong>Perhatian:</strong> Pastikan dokumen yang diunggah sudah final dan bebas dari plagiarisme. Dokumen akan melalui proses verifikasi oleh admin dan pembimbing.
+                        </div>
+                        
+                        <a href="#" class="btn btn-default btn-block">
+                            <span class="glyphicon glyphicon-download"></span> Download Template Dokumen
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Uploaded Documents -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upload-card">
+                        <h3><span class="glyphicon glyphicon-folder-open"></span> Dokumen Terunggah</h3>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="documentsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Dokumen</th>
+                                        <th>Jenis</th>
+                                        <th>Versi</th>
+                                        <th>Tanggal Upload</th>
+                                        <th>Ukuran</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-file file-icon"></span>
+                                            Proposal_23090014_EgiMutiaraBrSitepu_v2.1.pdf
+                                        </td>
+                                        <td>Proposal</td>
+                                        <td>v2.1</td>
+                                        <td>10 Juni 2025</td>
+                                        <td>2.4 MB</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>
+                                            <a href="#" title="Unduh"><span class="glyphicon glyphicon-download"></span></a>
+                                            <a href="#" title="Lihat Detail"><span class="glyphicon glyphicon-info-sign"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-file file-icon"></span>
+                                            Bab1_23090014_EgiMutiaraBrSitepu_v3.0.pdf
+                                        </td>
+                                        <td>Bab 1</td>
+                                        <td>v3.0</td>
+                                        <td>25 Juni 2025</td>
+                                        <td>1.8 MB</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>
+                                            <a href="#" title="Unduh"><span class="glyphicon glyphicon-download"></span></a>
+                                            <a href="#" title="Lihat Detail"><span class="glyphicon glyphicon-info-sign"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-file file-icon"></span>
+                                            Bab2_23090014_EgiMutiaraBrSitepu_v1.5.pdf
+                                        </td>
+                                        <td>Bab 2</td>
+                                        <td>v1.5</td>
+                                        <td>5 Juli 2025</td>
+                                        <td>3.2 MB</td>
+                                        <td><span class="status-badge status-rejected">Perlu Revisi</span></td>
+                                        <td>
+                                            <a href="#" title="Unduh"><span class="glyphicon glyphicon-download"></span></a>
+                                            <a href="#" title="Lihat Detail"><span class="glyphicon glyphicon-info-sign"></span></a>
+                                            <a href="#" title="Upload Revisi"><span class="glyphicon glyphicon-upload"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-file file-icon"></span>
+                                            FormBimbingan_23090014_EgiMutiaraBrSitepu_v1.0.pdf
+                                        </td>
+                                        <td>Formulir</td>
+                                        <td>v1.0</td>
+                                        <td>30 Juli 2025</td>
+                                        <td>0.5 MB</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>
+                                            <a href="#" title="Unduh"><span class="glyphicon glyphicon-download"></span></a>
+                                            <a href="#" title="Lihat Detail"><span class="glyphicon glyphicon-info-sign"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-file file-icon"></span>
+                                            PresentasiProposal_23090014_EgiMutiaraBrSitepu_v1.0.pptx
+                                        </td>
+                                        <td>Presentasi</td>
+                                        <td>v1.0</td>
+                                        <td>12 Juni 2025</td>
+                                        <td>5.7 MB</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>
+                                            <a href="#" title="Unduh"><span class="glyphicon glyphicon-download"></span></a>
+                                            <a href="#" title="Lihat Detail"><span class="glyphicon glyphicon-info-sign"></span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-file file-icon"></span>
+                                            FormPendaftaran_23090014_EgiMutiaraBrSitepu_v1.0.pdf
+                                        </td>
+                                        <td>Formulir</td>
+                                        <td>v1.0</td>
+                                        <td>1 Juni 2025</td>
+                                        <td>1.1 MB</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>
+                                            <a href="#" title="Unduh"><span class="glyphicon glyphicon-download"></span></a>
+                                            <a href="#" title="Lihat Detail"><span class="glyphicon glyphicon-info-sign"></span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Comments -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="upload-card">
+                        <h3><span class="glyphicon glyphicon-comment"></span> Komentar Terakhir Tentang Dokumen Anda</h3>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Roberto Kaban, M. Kom</strong> - 7 Agustus 2025 pada <strong>Bab2_23090014_EgiMutiaraBrSitepu_v1.5.pdf</strong>
+                            </div>
+                            <div class="panel-body">
+                                <p>"Bab 2 perlu penambahan referensi terkait metode penelitian yang digunakan. Mohon ditambahkan minimal 5 referensi jurnal terbaru (5 tahun terakhir). Bagian 2.3 juga perlu diperjelas hubungannya dengan penelitian Anda."</p>
+                                <p><strong>Status:</strong> <span class="label label-warning">Perlu Revisi</span></p>
+                                <p><strong>Batas Waktu Revisi:</strong> 15 Agustus 2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Admin SIMTA</strong> - 1 Agustus 2025 pada <strong>FormBimbingan_23090014_EgiMutiaraBrSitepu_v1.0.pdf</strong>
+                            </div>
+                            <div class="panel-body">
+                                <p>"Formulir bimbingan sudah lengkap dan sesuai persyaratan. Dokumen ini telah disetujui dan masuk dalam arsip resmi."</p>
+                                <p><strong>Status:</strong> <span class="label label-success">Disetujui</span></p>
+                            </div>
+                        </div>
+                        
+                        <a href="komentar.html" class="btn btn-default">Lihat Semua Komentar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistem Informasi Manajemen Tugas Akhir - Institut Teknologi dan Bisnis Indonesia</p>
+            <p>Jl. T. Amir Hamzah Km. 31,5 Tandem Hilir, Kec. Hamparan Perak - Kab. Deli Serdang</p>
+            <p>Design With <span class="glyphicon glyphicon-heart"></span> By Egi Mutiara Br Sitepu</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/dataTables.bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.dataTables.js"></script>
+    <script src="bootstrap/js/scripts.js"></script>
+</body>
+</html>

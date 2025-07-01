@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Komentar - SIMTA ITB</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body { 
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                <li><a href="profil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                <li><a href="upload.html"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                <li class="active"><a href="komentar.html"><span class="glyphicon glyphicon-comment"></span> Komentar</a></li>
+                <li><a href="jadwal.html"><span class="glyphicon glyphicon-calendar"></span> Jadwal</a></li>
+                <li><a href="riwayat.html"><span class="glyphicon glyphicon-time"></span> Riwayat</a></li>
+                <li><a href="formulir.html"><span class="glyphicon glyphicon-file"></span> Formulir</a></li>
+                <li><a href="notifikasi.html"><span class="glyphicon glyphicon-bell"></span> Notifikasi</a></li>
+                <li><a href="admin.html"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1><b><span class="glyphicon glyphicon-comment"></span> Komentar Dokumen Tugas Akhir</b></h1>
+                <p class="lead">Tinjau komentar dan masukan dari Pembimbing dan Penguji mengenai dokumen tugas akhir Anda</p>
+            </div>
+            
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterStatus">Filter Status</label>
+                            <select class="form-control" id="filterStatus">
+                                <option value="all">Semua Status</option>
+                                <option value="approved">Disetujui</option>
+                                <option value="pending">Menunggu Review</option>
+                                <option value="rejected">Perlu Revisi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterDocument">Filter Dokumen</label>
+                            <select class="form-control" id="filterDocument">
+                                <option value="all">Semua Dokumen</option>
+                                <option value="proposal">Proposal</option>
+                                <option value="bab1">Bab 1</option>
+                                <option value="bab2">Bab 2</option>
+                                <option value="bab3">Bab 3</option>
+                                <option value="bab4">Bab 4</option>
+                                <option value="bab5">Bab 5</option>
+                                <option value="laporan">Laporan Lengkap</option>
+                                <option value="presentasi">Presentasi</option>
+                                <option value="formulir">Formulir</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterReviewer">Filter Reviewer</label>
+                            <select class="form-control" id="filterReviewer">
+                                <option value="all">Semua Reviewer</option>
+                                <option value="pembimbing1">Roberto Kaban, M. Kom</option>
+                                <option value="pembimbing2">Dito Putro Utomo, M. Kom</option>
+                                <option value="penguji1">Devita Permata Sari, M. Kom</option>
+                                <option value="admin">Admin SIMTA</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="filterDate">Filter Tanggal</label>
+                            <input type="date" class="form-control" id="filterDate">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary">Terapkan Filter</button>
+                <button class="btn btn-default">Reset Filter</button>
+            </div>
+            
+            <!-- Comments List -->
+            <div class="comment-card">
+                <div class="comment-header">
+                    <div>
+                        <span class="comment-author">Roberto Kaban, M. Kom (Pembimbing 1)</span>
+                        <div class="comment-date">7 Agustus 2025 - 14:32</div>
+                    </div>
+                    <span class="comment-status status-rejected">Perlu Revisi</span>
+                </div>
+                <div class="comment-document">
+                    Pada dokumen: <span class="label-document">Bab2_23090014_EgiMutiaraBrSitepu_v1.5.pdf</span>
+                </div>
+                <div class="comment-content">
+                    <p>"Bab 2 perlu penambahan referensi terkait metode penelitian yang digunakan. Mohon ditambahkan minimal 5 referensi jurnal terbaru (5 tahun terakhir). Bagian 2.3 juga perlu diperjelas hubungannya dengan penelitian Anda."</p>
+                    <p><strong>Batas Waktu Revisi:</strong> 15 Agustus 2025</p>
+                </div>
+                <div class="comment-actions">
+                    <a href="upload.html" class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-upload"></span> Upload Revisi
+                    </a>
+                    <button class="btn btn-default btn-sm" data-toggle="collapse" data-target="#replyForm1">
+                        <span class="glyphicon glyphicon-share-alt"></span> Balas Komentar
+                    </button>
+                    <a href="#" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-download"></span> Unduh Dokumen
+                    </a>
+                </div>
+                
+                <div id="replyForm1" class="collapse reply-form">
+                    <h4>Balas Komentar</h4>
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" placeholder="Tulis balasan Anda..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="attachment1">Lampiran (Opsional)</label>
+                            <input type="file" id="attachment1" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Balasan</button>
+                    </form>
+                </div>
+                
+                <!-- Reply -->
+                <div class="panel panel-default" style="margin-top: 20px; margin-left: 30px;">
+                    <div class="panel-heading">
+                        <strong>Egi Mutiara Br Sitepu</strong> - 8 Agustus 2025 - 09:15
+                    </div>
+                    <div class="panel-body">
+                        <p>"Terima kasih atas masukannya, Pak. Saya akan menambahkan referensi terkait dan memperjelas bagian 2.3. Berikut draft revisi yang sudah saya kerjakan sebagian."</p>
+                        <p><strong>Lampiran:</strong> <a href="#">DraftRevisi_Bab2.pdf</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comment-card">
+                <div class="comment-header">
+                    <div>
+                        <span class="comment-author">Admin SIMTA</span>
+                        <div class="comment-date">1 Agustus 2025 - 10:15</div>
+                    </div>
+                    <span class="comment-status status-approved">Disetujui</span>
+                </div>
+                <div class="comment-document">
+                    Pada dokumen: <span class="label-document">FormBimbingan_23090014_EgiMutiaraBrSitepu_v1.0.pdf</span>
+                </div>
+                <div class="comment-content">
+                    <p>"Formulir bimbingan sudah lengkap dan sesuai persyaratan. Dokumen ini telah disetujui dan masuk dalam arsip resmi."</p>
+                </div>
+                <div class="comment-actions">
+                    <a href="#" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-download"></span> Unduh Dokumen
+                    </a>
+                    <button class="btn btn-default btn-sm" data-toggle="collapse" data-target="#replyForm2">
+                        <span class="glyphicon glyphicon-share-alt"></span> Balas Komentar
+                    </button>
+                </div>
+                
+                <div id="replyForm2" class="collapse reply-form">
+                    <h4>Balas Komentar</h4>
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" placeholder="Tulis balasan Anda..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="attachment2">Lampiran (Opsional)</label>
+                            <input type="file" id="attachment2" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Balasan</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="comment-card">
+                <div class="comment-header">
+                    <div>
+                        <span class="comment-author">Dito Putro Utomo, M. Kom (Pembimbing 2)</span>
+                        <div class="comment-date">25 Juli 2025 - 16:45</div>
+                    </div>
+                    <span class="comment-status status-approved">Disetujui</span>
+                </div>
+                <div class="comment-document">
+                    Pada dokumen: <span class="label-document">Bab1_23090014_EgiMutiaraBrSitepu_v3.0.pdf</span>
+                </div>
+                <div class="comment-content">
+                    <p>"Bab 1 sudah cukup komprehensif dan jelas. Latar belakang masalah sudah menggambarkan urgensi penelitian dengan baik. Rumusan masalah dan tujuan penelitian juga sudah sesuai."</p>
+                </div>
+                <div class="comment-actions">
+                    <a href="#" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-download"></span> Unduh Dokumen
+                    </a>
+                    <button class="btn btn-default btn-sm" data-toggle="collapse" data-target="#replyForm3">
+                        <span class="glyphicon glyphicon-share-alt"></span> Balas Komentar
+                    </button>
+                </div>
+                
+                <div id="replyForm3" class="collapse reply-form">
+                    <h4>Balas Komentar</h4>
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" placeholder="Tulis balasan Anda..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="attachment3">Lampiran (Opsional)</label>
+                            <input type="file" id="attachment3" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Balasan</button>
+                    </form>
+                </div>
+                
+                <!-- Reply -->
+                <div class="panel panel-default" style="margin-top: 20px; margin-left: 30px;">
+                    <div class="panel-heading">
+                        <strong>Egi Mutiara Br Sitepu</strong> - 26 Juli 2025 - 08:30
+                    </div>
+                    <div class="panel-body">
+                        <p>"Terima kasih banyak atas review dan persetujuannya, Pak."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comment-card">
+                <div class="comment-header">
+                    <div>
+                        <span class="comment-author">Devita Permata Sari, M. Kom (Penguji 1)</span>
+                        <div class="comment-date">15 Juli 2025 - 11:20</div>
+                    </div>
+                    <span class="comment-status status-rejected">Perlu Revisi</span>
+                </div>
+                <div class="comment-document">
+                    Pada dokumen: <span class="label-document">Proposal_23090014_EgiMutiaraBrSitepu_v2.1.pdf</span>
+                </div>
+                <div class="comment-content">
+                    <p>"Beberapa catatan untuk proposal Anda:</p>
+                    <ol>
+                        <li>Metode penelitian perlu dijelaskan lebih rinci, termasuk tahapan penelitian</li>
+                        <li>Tambahkan indikator keberhasilan untuk setiap tujuan penelitian</li>
+                        <li>Perbaiki format penulisan referensi agar konsisten (gunakan APA style)</li>
+                    </ol>
+                    <p>Mohon revisi dapat diselesaikan dalam 2 minggu."</p>
+                </div>
+                <div class="comment-actions">
+                    <a href="upload.html" class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-upload"></span> Upload Revisi
+                    </a>
+                    <button class="btn btn-default btn-sm" data-toggle="collapse" data-target="#replyForm4">
+                        <span class="glyphicon glyphicon-share-alt"></span> Balas Komentar
+                    </button>
+                    <a href="#" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-download"></span> Unduh Dokumen
+                    </a>
+                </div>
+                
+                <div id="replyForm4" class="collapse reply-form">
+                    <h4>Balas Komentar</h4>
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" placeholder="Tulis balasan Anda..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="attachment4">Lampiran (Opsional)</label>
+                            <input type="file" id="attachment4" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Balasan</button>
+                    </form>
+                </div>
+                
+                <!-- Reply -->
+                <div class="panel panel-default" style="margin-top: 20px; margin-left: 30px;">
+                    <div class="panel-heading">
+                        <strong>Egi Mutiara Br Sitepu</strong> - 16 Juli 2025 - 14:05
+                    </div>
+                    <div class="panel-body">
+                        <p>"Terima kasih atas masukannya, Bu. Saya akan segera melakukan revisi sesuai catatan Ibu. Untuk poin 3 tentang format referensi, apakah semua referensi perlu disesuaikan atau hanya yang belum menggunakan APA style?"</p>
+                    </div>
+                </div>
+                
+                <!-- Reply from reviewer -->
+                <div class="panel panel-info" style="margin-top: 10px; margin-left: 30px;">
+                    <div class="panel-heading">
+                        <strong>Devita Permata Sari, M. Kom (Penguji 1)</strong> - 16 Juli 2025 - 16:30
+                    </div>
+                    <div class="panel-body">
+                        <p>"Semua referensi perlu diseragamkan menggunakan APA style untuk konsistensi dokumen."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistem Informasi Manajemen Tugas Akhir - Institut Teknologi dan Bisnis Indonesia</p>
+            <p>Jl. T. Amir Hamzah Km. 31,5 Tandem Hilir, Kec. Hamparan Perak - Kab. Deli Serdang</p>
+            <p>Design With <span class="glyphicon glyphicon-heart"></span> By Egi Mutiara Br Sitepu</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/scripts.js"></script>
+</body>
+</html>

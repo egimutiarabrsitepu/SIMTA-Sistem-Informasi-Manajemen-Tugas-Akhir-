@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulir - SIMTA ITB</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body { 
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                <li><a href="profil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                <li><a href="upload.html"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                <li><a href="komentar.html"><span class="glyphicon glyphicon-comment"></span> Komentar</a></li>
+                <li><a href="jadwal.html"><span class="glyphicon glyphicon-calendar"></span> Jadwal</a></li>
+                <li><a href="riwayat.html"><span class="glyphicon glyphicon-time"></span> Riwayat</a></li>
+                <li class="active"><a href="formulir.html"><span class="glyphicon glyphicon-file"></span> Formulir</a></li>
+                <li><a href="notifikasi.html"><span class="glyphicon glyphicon-bell"></span> Notifikasi</a></li>
+                <li><a href="admin.html"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1><b><span class="glyphicon glyphicon-file"></span> Formulir Tugas Akhir</b></h1>
+                <p class="lead">Isi dan kelola formulir administrasi tugas akhir Anda</p>
+            </div>
+            
+            <!-- Form Navigation Tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#form-proposal" aria-controls="form-proposal" role="tab" data-toggle="tab">Formulir Proposal</a></li>
+                <li role="presentation"><a href="#form-seminar" aria-controls="form-seminar" role="tab" data-toggle="tab">Formulir Seminar</a></li>
+                <li role="presentation"><a href="#form-sidang" aria-controls="form-sidang" role="tab" data-toggle="tab">Formulir Sidang</a></li>
+                <li role="presentation"><a href="#form-bimbingan" aria-controls="form-bimbingan" role="tab" data-toggle="tab">Formulir Bimbingan</a></li>
+                <li role="presentation"><a href="#form-yudisium" aria-controls="form-yudisium" role="tab" data-toggle="tab">Formulir Yudisium</a></li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Proposal Form Tab -->
+                <div role="tabpanel" class="tab-pane active" id="form-proposal">
+                    <div class="alert alert-info">
+                        <strong>Informasi:</strong> Formulir proposal harus diisi dan disetujui oleh pembimbing sebelum mengajukan proposal tugas akhir.
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Data Mahasiswa</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="required-field" for="nama">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="nama" value="Egi Mutiara Br Sitepu" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="required-field" for="nim">NIM</label>
+                                    <input type="text" class="form-control" id="nim" value="23090014" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="required-field" for="prodi">Program Studi</label>
+                                    <input type="text" class="form-control" id="prodi" value="Rekayasa Perangkat Lunak" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="required-field" for="fakultas">Fakultas</label>
+                                    <input type="text" class="form-control" id="fakultas" value="Saintek" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Data Pembimbing</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="required-field" for="pembimbing1">Pembimbing 1</label>
+                                    <select class="form-control" id="pembimbing1" required>
+                                        <option value="">-- Pilih Pembimbing 1 --</option>
+                                        <option value="123" selected>Roberto Kaban, M. Kom.</option>
+                                        <option value="124">Dito Putro Utomo, M. Kom.</option>
+                                        <option value="125">Surizar Rahmi Danur, M.Kom.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="pembimbing2">Pembimbing 2 (Opsional)</label>
+                                    <select class="form-control" id="pembimbing2">
+                                        <option value="">-- Pilih Pembimbing 2 --</option>
+                                        <option value="123">Roberto Kaban, M. Kom.</option>
+                                        <option value="124" selected>Dito Putro Utomo, M. Kom.</option>
+                                        <option value="125">Surizar Rahmi Danur, M.Kom.</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Judul Proposal</h3>
+                        <div class="form-group">
+                            <label class="required-field" for="judul">Judul Tugas Akhir (Bahasa Indonesia)</label>
+                            <textarea class="form-control" id="judul" rows="2" required>Sistem Informasi Manajemen Tugas Akhir Berbasis Web dengan Framework Laravel</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="required-field" for="judul_inggris">Judul Tugas Akhir (Bahasa Inggris)</label>
+                            <textarea class="form-control" id="judul_inggris" rows="2" required>Final Project Management Information System Using Laravel Web Framework</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Informasi Tambahan</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="required-field" for="tgl_pengajuan">Tanggal Pengajuan</label>
+                                    <input type="date" class="form-control" id="tgl_pengajuan" value="2025-05-10" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="required-field" for="semester">Semester Pengajuan</label>
+                                    <select class="form-control" id="semester" required>
+                                        <option value="Ganjil 2024/2025">Ganjil 2024/2025</option>
+                                        <option value="Genap 2024/2025" selected>Genap 2024/2025</option>
+                                        <option value="Ganjil 2025/2026">Ganjil 2025/2026</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="abstrak">Abstrak (Maksimal 250 kata)</label>
+                            <textarea class="form-control" id="abstrak" rows="5">Penelitian ini bertujuan untuk mengembangkan sebuah Sistem Informasi Manajemen Tugas Akhir berbasis web yang dapat membantu proses administrasi tugas akhir di Institut Teknologi Bandung. Sistem ini akan dibangun menggunakan framework Laravel dengan arsitektur MVC...</textarea>
+                            <span class="help-block">Kata saat ini: 45</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Dokumen Pendukung</h3>
+                        <div class="form-group">
+                            <label class="required-field" for="file_proposal">File Proposal (PDF, maks. 5MB)</label>
+                            <input type="file" id="file_proposal" required>
+                            <div class="file-upload-info">
+                                <p>File terunggah: <a href="#">proposal_EgiMutiaraBrSitepu_23090014.pdf</a> (2.4MB)</p>
+                                <p><span class="status-badge status-approved">Terverifikasi</span> - Diunggah pada 10 Mei 2025</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_pendukung">File Pendukung Lainnya (Opsional, ZIP, maks. 10MB)</label>
+                            <input type="file" id="file_pendukung">
+                            <span class="help-block">Dapat berupa gambar, diagram, atau dokumen pendukung lainnya dalam format ZIP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-eye-open"></span> Pratinjau Formulir
+                        </button>
+                        <button type="submit" class="btn btn-primary pull-right">
+                            <span class="glyphicon glyphicon-floppy-disk"></span> Simpan Perubahan
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Seminar Form Tab -->
+                <div role="tabpanel" class="tab-pane" id="form-seminar">
+                    <div class="alert alert-warning">
+                        <strong>Perhatian:</strong> Formulir seminar hanya dapat diisi setelah proposal disetujui dan minimal 2 minggu sebelum jadwal seminar.
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Informasi Seminar</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="jenis_seminar">Jenis Seminar</label>
+                                    <select class="form-control" id="jenis_seminar" disabled>
+                                        <option value="">-- Pilih Jenis Seminar --</option>
+                                        <option value="proposal" selected>Seminar Proposal</option>
+                                        <option value="hasil">Seminar Hasil</option>
+                                        <option value="sidang">Seminar Sidang</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="tgl_seminar">Tanggal Seminar</label>
+                                    <input type="date" class="form-control" id="tgl_seminar" value="2025-06-15" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ruang_seminar">Ruang Seminar</label>
+                            <input type="text" class="form-control" id="ruang_seminar" value="Ruang Seminar Gedung Labtek VIII Lantai 2" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Penguji Seminar</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="penguji1">Penguji 1</label>
+                                    <input type="text" class="form-control" id="penguji1" value="Devita Permata Sari, M. Kom." disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="penguji2">Penguji 2</label>
+                                    <input type="text" class="form-control" id="penguji2" value="Rimmar Siringo-ringo, M. Si." disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Dokumen Seminar</h3>
+                        <div class="form-group">
+                            <label for="file_seminar">File Presentasi (PDF/PPT, maks. 10MB)</label>
+                            <input type="file" name="foto">
+                            <div class="file-upload-info">
+                                <p>File terunggah: <a href="#">presentasi_seminar_EgiMutiaraBrSitepu_23090014.pdf</a> (3.1MB)</p>
+                                <p><span class="status-badge status-approved">Terverifikasi</span> - Diunggah pada 14 Juni 2025</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file_laporan">File Laporan Sementara (PDF, maks. 20MB)</label>
+                            <input type="file" name="foto">
+                            <div class="file-upload-info">
+                                <p>File terunggah: <a href="#">laporan_sementara_EgiMutiaraBrSitepu_23090014.pdf</a> (8.7MB)</p>
+                                <p><span class="status-badge status-approved">Terverifikasi</span> - Diunggah pada 14 Juni 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-default" disabled>
+                            <span class="glyphicon glyphicon-eye-open"></span> Pratinjau Formulir
+                        </button>
+                        <button type="button" class="btn btn-primary pull-right" disabled>
+                            <span class="glyphicon glyphicon-floppy-disk"></span> Simpan Perubahan
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Sidang Form Tab -->
+                <div role="tabpanel" class="tab-pane" id="form-sidang">
+                    <div class="alert alert-danger">
+                        <strong>Belum Tersedia:</strong> Formulir sidang akan tersedia setelah Anda menyelesaikan seminar hasil dan memenuhi persyaratan administrasi.
+                    </div>
+                    
+                    <div class="form-preview">
+                        <h4>Persyaratan Sidang Tugas Akhir</h4>
+                        <ul>
+                            <li>Sudah menyelesaikan seminar proposal dan seminar hasil</li>
+                            <li>Sudah menyelesaikan minimal 80% penelitian</li>
+                            <li>Sudah menyelesaikan penulisan laporan tugas akhir minimal 90%</li>
+                            <li>Mendapat persetujuan dari pembimbing</li>
+                            <li>Memenuhi persyaratan administrasi (KRS, KHS, dll)</li>
+                        </ul>
+                        
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                40% Persyaratan Terpenuhi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bimbingan Form Tab -->
+                <div role="tabpanel" class="tab-pane" id="form-bimbingan">
+                    <div class="alert alert-info">
+                        <strong>Informasi:</strong> Formulir ini digunakan untuk mencatat perkembangan bimbingan tugas akhir.
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Formulir Bimbingan</h3>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Pembimbing</th>
+                                        <th>Materi</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>12 Mei 2025</td>
+                                        <td>Roberto Kaban, M. Kom.</td>
+                                        <td>Pembahasan proposal dan metodologi</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>25 Mei 2025</td>
+                                        <td>Dito Putro Utomo, M. Kom.</td>
+                                        <td>Review bab 1 dan 2</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5 Juni 2025</td>
+                                        <td>Roberto Kaban, M. Kom.</td>
+                                        <td>Pembahasan bab 3</td>
+                                        <td><span class="status-badge status-approved">Disetujui</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>20 Juni 2025</td>
+                                        <td>Dito Putro Utomo, M. Kom.</td>
+                                        <td>Revisi bab 3</td>
+                                        <td><span class="status-badge status-pending">Menunggu</span></td>
+                                        <td>
+                                            <button class="btn btn-xs btn-default">Detail</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <button class="btn btn-primary">
+                            <span class="glyphicon glyphicon-plus"></span> Tambah Bimbingan Baru
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Yudisium Form Tab -->
+                <div role="tabpanel" class="tab-pane" id="form-yudisium">
+                    <div class="alert alert-danger">
+                        <strong>Belum Tersedia:</strong> Formulir yudisium akan tersedia setelah Anda menyelesaikan sidang tugas akhir dan memenuhi semua persyaratan.
+                    </div>
+                    
+                    <div class="form-preview">
+                        <h4>Persyaratan Yudisium</h4>
+                        <ul>
+                            <li>Sudah menyelesaikan sidang tugas akhir</li>
+                            <li>Sudah menyelesaikan semua revisi dari penguji</li>
+                            <li>Sudah mengunggah laporan tugas akhir final</li>
+                            <li>Memenuhi persyaratan administrasi (KRS, KHS, TOEFL, dll)</li>
+                            <li>Tidak memiliki tunggakan administrasi</li>
+                        </ul>
+                        
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                                10% Persyaratan Terpenuhi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistem Informasi Manajemen Tugas Akhir - Institut Teknologi dan Bisnis Indonesia</p>
+            <p>Jl. T. Amir Hamzah Km. 31,5 Tandem Hilir, Kec. Hamparan Perak - Kab. Deli Serdang</p>
+            <p>Design With <span class="glyphicon glyphicon-heart"></span> By Egi Mutiara Br Sitepu</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/dataTables.bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.dataTables.js"></script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard - SIMTA Institut Teknologi dan Bisnis Indonesia</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/styles.css" rel="stylesheet">
+    <style>
+        body { 
+            padding-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="active"><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+                <li><a href="profil.html"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+                <li><a href="upload.html"><span class="glyphicon glyphicon-upload"></span> Upload</a></li>
+                <li><a href="komentar.html"><span class="glyphicon glyphicon-comment"></span> Komentar</a></li>
+                <li><a href="jadwal.html"><span class="glyphicon glyphicon-calendar"></span> Jadwal</a></li>
+                <li><a href="riwayat.html"><span class="glyphicon glyphicon-time"></span> Riwayat</a></li>
+                <li><a href="formulir.html"><span class="glyphicon glyphicon-file"></span> Formulir</a></li>
+                <li><a href="notifikasi.html"><span class="glyphicon glyphicon-bell"></span> Notifikasi</a></li>
+                <li><a href="admin.html"><span class="glyphicon glyphicon-cog"></span> Admin</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1><b><span class="glyphicon glyphicon-dashboard"></span> Dashboard Mahasiswa</b></h1>
+                <p class="lead">Ringkasan perkembangan tugas akhir Anda - Program Studi Rekayasa Perangkat Lunak</p>
+            </div>
+            
+            <!-- Info Panel -->
+            <div class="info-panel">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4><span class="glyphicon glyphicon-user"></span> Informasi Mahasiswa</h4>
+                        <p><strong>Nama:</strong> Egi Mutiara Br Sitepu<br>
+                        <strong>NIM:</strong> 23090014<br>
+                        <strong>Program Studi:</strong> Rekayasa Perangkat Lunak</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4><span class="glyphicon glyphicon-education"></span> Pembimbing</h4>
+                        <p><strong>Pembimbing 1:</strong> Roberto Kaban, M. Kom.<br>
+                        <strong>Pembimbing 2:</strong> Dito Putro Utomo, M. Kom.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4><span class="glyphicon glyphicon-book"></span> Judul Tugas Akhir</h4>
+                        <p>"Pengembangan Sistem Deteksi Plagiarisme untuk Dokumen Akademik Berbasis Machine Learning"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Status Progress -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="status-card important">
+                        <h3><span class="glyphicon glyphicon-exclamation-sign"></span> Status Penting</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Batas akhir pengumpulan Bab 3:</strong> 15 Agustus 2025 (5 hari lagi)</p>
+                                <p><strong>Revisi yang belum diselesaikan:</strong> 3 item dari pembimbing</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>Konsultasi berikutnya:</strong> 12 Agustus 2025 (3 hari lagi)</p>
+                                <p><strong>Seminar hasil dijadwalkan:</strong> 25 Agustus 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress Bar dan Timeline -->
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Progress Penyusunan Tugas Akhir</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65% Selesai</div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Komponen</th>
+                                    <th>Progress</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bab 1 - Pendahuluan</td>
+                                    <td>
+                                        <div class="progress" style="height: 15px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="label label-success">Disetujui</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Bab 2 - Tinjauan Pustaka</td>
+                                    <td>
+                                        <div class="progress" style="height: 15px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="label label-warning">Perlu Revisi</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Bab 3 - Metodologi</td>
+                                    <td>
+                                        <div class="progress" style="height: 15px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 40%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="label label-danger">Dalam Proses</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Bab 4 - Hasil & Pembahasan</td>
+                                    <td>
+                                        <div class="progress" style="height: 15px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 10%"></div>
+                                        </div>
+                                    </td>
+                                    <td><span class="label label-default">Belum Dimulai</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h3>Timeline Penyelesaian</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Pengajuan Judul <span class="label label-success pull-right">Selesai</span></h4>
+                            <p>1 Juni 2025 - Disetujui</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Seminar Proposal <span class="label label-success pull-right">Selesai</span></h4>
+                            <p>15 Juni 2025 - Nilai: A</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Penulisan Bab 1-3 <span class="label label-primary pull-right">Dalam Proses</span></h4>
+                            <p>20 Juni - 15 Agustus 2025</p>
+                            <p>Target: 65% (Saat ini 55%)</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Seminar Hasil <span class="label label-default pull-right">Akan Datang</span></h4>
+                            <p>25 Agustus 2025</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Sidang Akhir <span class="label label-default pull-right">Akan Datang</span></h4>
+                            <p>15 September 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dokumen dan Jadwal -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="status-card">
+                        <h3><span class="glyphicon glyphicon-file"></span> Dokumen Terkini</h3>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Dokumen</th>
+                                    <th>Versi</th>
+                                    <th>Status</th>
+                                    <th>Tanggal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Proposal_TA.pdf</td>
+                                    <td>v2.1</td>
+                                    <td><span class="label label-success">Disetujui</span></td>
+                                    <td>10 Juni 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Bab1_Pendahuluan.pdf</td>
+                                    <td>v3.0</td>
+                                    <td><span class="label label-success">Disetujui</span></td>
+                                    <td>25 Juni 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Bab2_TinjauanPustaka.pdf</td>
+                                    <td>v1.5</td>
+                                    <td><span class="label label-warning">Perlu Revisi</span></td>
+                                    <td>5 Juli 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Form_Bimbingan.pdf</td>
+                                    <td>v1.0</td>
+                                    <td><span class="label label-success">Disetujui</span></td>
+                                    <td>30 Juli 2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Bab3_Metodologi.pdf</td>
+                                    <td>-</td>
+                                    <td><span class="label label-danger">Belum Upload</span></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="upload.html" class="btn btn-primary">Upload Dokumen Baru</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="status-card warning">
+                        <h3><span class="glyphicon glyphicon-calendar"></span> Jadwal Terdekat</h3>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Kegiatan</th>
+                                    <th>Tanggal</th>
+                                    <th>Waktu</th>
+                                    <th>Lokasi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Konsultasi dengan Pembimbing</td>
+                                    <td>12 Agu 2025</td>
+                                    <td>13.00-15.00</td>
+                                    <td>Labtek V Lt.3</td>
+                                </tr>
+                                <tr>
+                                    <td>Seminar Hasil</td>
+                                    <td>25 Agu 2025</td>
+                                    <td>09.00-11.00</td>
+                                    <td>R. Seminar CCAR</td>
+                                </tr>
+                                <tr>
+                                    <td>Batas Akhir Bab 3</td>
+                                    <td>15 Agu 2025</td>
+                                    <td>-</td>
+                                    <td>Online</td>
+                                </tr>
+                                <tr>
+                                    <td>Workshop Penulisan</td>
+                                    <td>18 Agu 2025</td>
+                                    <td>08.00-12.00</td>
+                                    <td>Gedung CRCS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="jadwal.html" class="btn btn-warning">Lihat Kalender Lengkap</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Komentar dan Revisi -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="status-card">
+                        <h3><span class="glyphicon glyphicon-comment"></span> Komentar Terakhir dari Pembimbing</h3>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>Roberto Kaban, M. Kom</strong> - 7 Agustus 2025
+                            </div>
+                            <div class="panel-body">
+                                <p>"Bab 2 perlu penambahan referensi terkait metode penelitian yang digunakan. Mohon ditambahkan minimal 5 referensi jurnal terbaru (5 tahun terakhir). Untuk Bab 3, harap konsultasikan terlebih dahulu outline sebelum mulai menulis."</p>
+                                <p><strong>Dokumen:</strong> Bab2_TinjauanPustaka.pdf</p>
+                            </div>
+                        </div>
+                        <a href="komentar.html" class="btn btn-primary">Lihat Semua Komentar</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="status-card">
+                        <h3><span class="glyphicon glyphicon-list"></span> Daftar Revisi</h3>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Dokumen</th>
+                                    <th>Status</th>
+                                    <th>Batas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tambahkan referensi</td>
+                                    <td>Bab 2</td>
+                                    <td><span class="label label-warning">Belum</span></td>
+                                    <td>15 Agu</td>
+                                </tr>
+                                <tr>
+                                    <td>Perbaiki metodologi</td>
+                                    <td>Bab 2</td>
+                                    <td><span class="label label-warning">Belum</span></td>
+                                    <td>15 Agu</td>
+                                </tr>
+                                <tr>
+                                    <td>Konsultasi outline</td>
+                                    <td>Bab 3</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                    <td>10 Agu</td>
+                                </tr>
+                                <tr>
+                                    <td>Perbaiki format tabel</td>
+                                    <td>Bab 1</td>
+                                    <td><span class="label label-success">Selesai</span></td>
+                                    <td>5 Agu</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="komentar.html" class="btn btn-default">Tandai sebagai Selesai</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Statistik Bimbingan -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="status-card completed">
+                        <h3><span class="glyphicon glyphicon-stats"></span> Statistik Bimbingan</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="well text-center">
+                                    <h4>Total Pertemuan</h4>
+                                    <h2>8</h2>
+                                    <p>dari 12 pertemuan wajib</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="well text-center">
+                                    <h4>Rata-rata Durasi</h4>
+                                    <h2>45 menit</h2>
+                                    <p>per pertemuan</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="well text-center">
+                                    <h4>Keterlambatan</h4>
+                                    <h2>2</h2>
+                                    <p>dari 8 pertemuan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Pertemuan Ke-</th>
+                                    <th>Tanggal</th>
+                                    <th>Durasi</th>
+                                    <th>Materi</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>5 Juni 2025</td>
+                                    <td>60 menit</td>
+                                    <td>Pengajuan Judul</td>
+                                    <td><span class="label label-success">Tepat Waktu</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>12 Juni 2025</td>
+                                    <td>45 menit</td>
+                                    <td>Penyusunan Proposal</td>
+                                    <td><span class="label label-success">Tepat Waktu</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>20 Juni 2025</td>
+                                    <td>30 menit</td>
+                                    <td>Revisi Proposal</td>
+                                    <td><span class="label label-warning">Terlambat 15m</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>28 Juni 2025</td>
+                                    <td>50 menit</td>
+                                    <td>Persiapan Seminar</td>
+                                    <td><span class="label label-success">Tepat Waktu</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistem Informasi Manajemen Tugas Akhir - Institut Teknologi dan Bisnis Indonesia</p>
+            <p>Jl. T. Amir Hamzah Km. 31,5 Tandem Hilir, Kec. Hamparan Perak - Kab. Deli Serdang</p>
+            <p>Design With <span class="glyphicon glyphicon-heart"></span> By Egi Mutiara Br Sitepu</p>
+        </div>
+    </footer>
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/dataTables.bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.dataTables.js"></script>
+    <script src="bootstrap/js/scripts.js"></script>
+</body>
+</html>
