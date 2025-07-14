@@ -10,27 +10,144 @@
     <style>
         body { 
             padding-top: 60px; 
+            background-color: #f8f9fa; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar { 
+            background-color: #0056b3; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-brand, .navbar-nav > li > a { 
+            color: #ffffff !important; 
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        .navbar-nav > li > a:hover {
+            color: #cce5ff !important;
+            transform: translateY(-2px);
+        }
+        .page-header {
+            border-bottom: 2px solid #0056b3;
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 1140px;
+        }
+        footer { 
+            background-color: #343a40; 
+            color: #ffffff; 
+            padding: 25px 0; 
+            text-align: center; 
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        .main-content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .upload-card {
+            border-left: 4px solid #0056b3;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .upload-area {
+            border: 2px dashed #0056b3;
+            border-radius: 5px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #e7f1ff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .upload-area:hover {
+            background-color: #d0e3ff;
+        }
+        .upload-area i {
+            font-size: 48px;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        .file-list {
+            margin-top: 20px;
+        }
+        .file-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .file-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #0056b3;
+        }
+        .file-info {
+            flex-grow: 1;
+        }
+        .file-actions a {
+            margin-left: 10px;
+            color: #6c757d;
+        }
+        .file-actions a:hover {
+            color: #0056b3;
+        }
+        .table th {
+            background-color: #0056b3;
+            color: white;
+        }
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .status-approved {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status-rejected {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .requirements-list {
+            padding-left: 20px;
+        }
+        .requirements-list li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Tombol Toggle untuk Mode Mobile -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarUpload" aria-expanded="false">
-                <span class="sr-only">Toggle Navigasi</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">
-                <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
-            </a>
-        </div>
-
-        <!-- Menu yang Dapat Diperluas -->
-        <div class="collapse navbar-collapse" id="navbarUpload">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span> SIMTA ITB INDONESIA
+                </a>
+            </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
@@ -45,13 +162,12 @@
                 <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <div class="container">
         <div class="main-content">
             <div class="page-header">
-                <h1><b><span class="glyphicon glyphicon-upload"></span> Upload Dokumen Tugas Akhir</b></h1>
+                <h1><span class="glyphicon glyphicon-upload"></span> Upload Dokumen Tugas Akhir</h1>
                 <p class="lead">Unggah dokumen tugas akhir Anda sesuai dengan tahapan dan persyaratan yang berlaku</p>
             </div>
             

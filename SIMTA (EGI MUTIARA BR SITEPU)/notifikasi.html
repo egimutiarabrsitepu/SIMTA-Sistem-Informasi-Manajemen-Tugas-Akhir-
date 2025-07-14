@@ -10,27 +10,142 @@
     <style>
         body { 
             padding-top: 60px; 
+            background-color: #f8f9fa; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar { 
+            background-color: #0056b3; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-brand, .navbar-nav > li > a { 
+            color: #ffffff !important; 
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        .navbar-nav > li > a:hover {
+            color: #cce5ff !important;
+            transform: translateY(-2px);
+        }
+        .page-header {
+            border-bottom: 2px solid #0056b3;
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 1140px;
+        }
+        footer { 
+            background-color: #343a40; 
+            color: #ffffff; 
+            padding: 25px 0; 
+            text-align: center; 
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        .main-content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .notification-card {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #0056b3;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .notification-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .notification-card.unread {
+            background-color: #f0f7ff;
+            border-left-color: #007bff;
+        }
+        .notification-card.important {
+            border-left-color: #dc3545;
+            background-color: #fff3f3;
+        }
+        .notification-card.warning {
+            border-left-color: #ffc107;
+            background-color: #fffdf4;
+        }
+        .notification-card.success {
+            border-left-color: #28a745;
+            background-color: #f0fff4;
+        }
+        .notification-time {
+            color: #6c757d;
+            font-size: 0.85em;
+        }
+        .notification-badge {
+            display: inline-block;
+            padding: 3px 7px;
+            border-radius: 50%;
+            background-color: #dc3545;
+            color: white;
+            font-size: 0.75em;
+            margin-left: 5px;
+        }
+        .filter-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e7f1ff;
+            border-radius: 5px;
+        }
+        .mark-all-read {
+            margin-bottom: 15px;
+        }
+        .notification-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+            color: #0056b3;
+        }
+        .notification-actions {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        .notification-important .notification-icon {
+            color: #dc3545;
+        }
+        .notification-warning .notification-icon {
+            color: #ffc107;
+        }
+        .notification-success .notification-icon {
+            color: #28a745;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6c757d;
+        }
+        .empty-state-icon {
+            font-size: 3em;
+            color: #dee2e6;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Tombol hamburger untuk mobile -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">
-                <span class="glyphicon glyphicon-education" aria-hidden="true"></span><b>SIMTA ITB INDONESIA</b>
-            </a>
-        </div>
-
-        <!-- Daftar menu yang bisa dicollapse -->
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span> SIMTA ITB INDONESIA
+                </a>
+            </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li><a href="dashboard.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
@@ -45,13 +160,12 @@
                 <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <div class="container">
         <div class="main-content">
             <div class="page-header">
-                <h1><b><span class="glyphicon glyphicon-bell"></span> Notifikasi</b></h1>
+                <h1><span class="glyphicon glyphicon-bell"></span> Notifikasi</h1>
                 <p class="lead">Lihat semua pemberitahuan dan aktivitas terbaru terkait tugas akhir Anda</p>
             </div>
             
